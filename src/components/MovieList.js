@@ -1,6 +1,7 @@
 // components/MovieList.js
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import MovieCard from './MovieCard';
+import {UserContext} from "./UserContextProvider";
 
 const MovieList = () => {
     const [movies, setMovies] = useState([]);
@@ -37,4 +38,4 @@ const MovieList = () => {
     );
 };
 
-export default MovieList;
+export default  MovieList;

@@ -9,6 +9,7 @@ import ForYou from './components/ForYou'; // Импортируйте компо
 import LoginPage from './components/Login';
 
 function App() {
+
     const [selectedGenre, setSelectedGenre] = useState('all');
     const [movies, setMovies] = useState([]);
     const [currentUser, setCurrentUser] = useState(null);
@@ -56,9 +57,12 @@ function App() {
                     <Route path="/login" element={<LoginPage setCurrentUser={setCurrentUser} />} />
                     {/* Добавьте другие маршруты, если необходимо */}
                 </Routes>
+
             </div>
         </div>
     );
 }
 
-export default App;
+export default  App;
+
+
