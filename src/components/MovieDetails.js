@@ -1,6 +1,6 @@
+// components/MovieDetails.js
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import MoviePlayer from './MoviePlayer';
 
 const MovieDetails = () => {
     const { id } = useParams();
@@ -29,7 +29,20 @@ const MovieDetails = () => {
                     <img src={movieDetails.medium_cover_image} alt={movieDetails.title} />
                     <h3>Genres: {movieDetails.genres.join(', ')}</h3>
 
-                    {movieDetails.yt_trailer_code && <MoviePlayer trailerCode={movieDetails.yt_trailer_code} />}
+                    {/* Добавляем видео-плеер */}
+                    {movieDetails.yt_trailer_code && (
+                        <div>
+                            <h3>Trailer</h3>
+                            <iframe
+                                title="trailer"
+                                width="560"
+                                height="315"
+                                src={`https://www.youtube.com/embed/${movieDetails.yt_trailer_code}?controls=0`}
+                                frameBorder="0"
+                                allowFullScreen
+                            />
+                        </div>
+                    )}
                 </div>
             )}
         </div>

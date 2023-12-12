@@ -1,10 +1,10 @@
+// Обновленный файл Header.js
 // components/Header.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import GenreFilterButton from './GenreFilterButton';
 
-const Header = ({ onGenreChange, genres }) => {
-    return (
+const Header = ({ currentUser, onGenreChange, genres }) => (
+    <div>
         <header>
             <nav>
                 <ul>
@@ -12,16 +12,25 @@ const Header = ({ onGenreChange, genres }) => {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/for-you">For you</Link> {/* Переименованная ссылка */}
+                        <Link to="/for-you">For You</Link>
                     </li>
-                    {/* Удалите следующую строку, чтобы удалить ссылку "About" */}
-                    {/* <li><Link to="/about">About</Link></li> */}
-                    {/* Добавьте другие ссылки на страницы, если необходимо */}
+                    <li>
+                        {currentUser ? (
+                            <span>Welcome, {currentUser.username}!</span>
+                        ) : (
+                            <Link to="/login">Login</Link>
+                        )}
+                    </li>
+                    {/* Другие ссылки в вашем меню */}
                 </ul>
             </nav>
-            <GenreFilterButton genres={genres} onGenreChange={onGenreChange} />
         </header>
-    );
-};
+        {currentUser && (
+            <div>
+                {/* Дополнительные элементы интерфейса для авторизованного пользователя */}
+            </div>
+        )}
+    </div>
+);
 
 export default Header;

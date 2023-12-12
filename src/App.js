@@ -6,11 +6,25 @@ import MovieList from './components/MovieList';
 import MovieDetails from './components/MovieDetails';
 import Header from './components/Header';
 import ForYou from './components/ForYou'; // Импортируйте компонент
-import Footer from './components/Footer';
+import LoginPage from './components/Login';
 
 function App() {
     const [selectedGenre, setSelectedGenre] = useState('all');
     const [movies, setMovies] = useState([]);
+    const [currentUser, setCurrentUser] = useState(null);
+    useEffect(() => {
+        const fetchMovies = async () => {
+            try {
+                const response = await fetch('https://yts.mx/api/v2/list_movies.json?quality=3D');
+                const data = await response.json();
+                setMovies(data.data.movies);
+            } catch (error) {
+                console.error('Error fetching movies:', error);
+            }
+        };
+
+        fetchMovies();
+    }, []);
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -26,22 +40,20 @@ function App() {
         fetchMovies();
     }, []);
 
-    const handleGenreChange = (genre) => {
-        setSelectedGenre(genre);
-        // Дополнительная логика обновления списка фильмов на основе выбранного жанра
-    };
+
 
     // Обновите этот массив с новыми жанрами
     const genres = ['Action', 'Drama', 'Comedy', 'Fantasy', 'Thriller', 'Sci-Fi','Music','Horror','Documentary','War','Crime','Mystery','History','Romance','Biography','Family','Sport'];
 
     return (
         <div className="App">
-            <Header onGenreChange={handleGenreChange} genres={genres} />
+            <Header  />
             <div className="main">
                 <Routes>
-                    <Route path="/" element={<MovieList movies={movies} selectedGenre={selectedGenre} />} />
+                    <Route path="/" element={<MovieList movies={movies}  />} />
                     <Route path="/movie/:id" element={<MovieDetails />} />
                     <Route path="/for-you" element={<ForYou />} /> {/* Используйте компонент ForYou */}
+                    <Route path="/login" element={<LoginPage setCurrentUser={setCurrentUser} />} />
                     {/* Добавьте другие маршруты, если необходимо */}
                 </Routes>
             </div>
