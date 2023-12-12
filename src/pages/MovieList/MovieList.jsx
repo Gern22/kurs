@@ -5,7 +5,6 @@ import { UserContext } from '../../context/UserContextProvider';
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
-  const [filteredMovies, setFilteredMovies] = useState([]);
   const userContext = useContext(UserContext);
 
   useEffect(() => {
@@ -22,15 +21,9 @@ const MovieList = () => {
     fetchMovies();
   }, []);
 
-  useEffect(() => {
-    //TODO sorted movies by userContext.user.preferences
-    // and add which movies are recommended to FilteredMovies
-    setFilteredMovies(movies);
-  }, [movies]);
-
   return (
     <div className="movie-container">
-      {filteredMovies.map(movie => (
+      {movies.map(movie => (
         <MovieCard key={movie.id} movie={movie} isRecommended={movie?.isRecommended}/>
       ))}
     </div>

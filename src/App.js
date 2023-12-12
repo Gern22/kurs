@@ -9,9 +9,6 @@ import UserContextProvider from './context/UserContextProvider';
 import './App.css';
 
 function App(){
-  const [selectedGenre, setSelectedGenre] = useState('all');
-  const [currentUser, setCurrentUser] = useState(null);
-
   const genres = ['Action', 'Drama', 'Comedy', 'Fantasy', 'Thriller', 'Sci-Fi', 'Music', 'Horror', 'Documentary', 'War', 'Crime', 'Mystery', 'History', 'Romance', 'Biography', 'Family', 'Sport'];
 
   return (
@@ -24,7 +21,7 @@ function App(){
             <Route path="/" element={<MovieList/>}/>
             <Route path="/movie/:id" element={<MovieDetails/>}/>
             <Route path="/for-you" element={<ForYou/>}/>
-            <Route path="/login" element={<LoginPage setCurrentUser={setCurrentUser}/>}/>
+            <Route path="/login" element={<LoginPage/>}/>
           </Routes>
           {/*Add here PreferencesProvider*/}
         </UserContextProvider>
