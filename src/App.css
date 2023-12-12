@@ -1,38 +1,175 @@
-.App {
+body {
+  display: flex;
+  background: #333;
+  margin: 0;
+  color: #fff;
+}
+
+.main {
+  margin-top: 10%;
+  margin-left: 28px;
+  margin-right: 28px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.movie-card {
+  position: relative;
+  /* width: 25%; Удалено */
+  float: left;
+  margin: 0;
+  margin-right: 20px; /* Добавлен отступ между карточками */
+  margin-bottom: 70px;
+  min-width: 220px; /* Добавлен минимальный размер */
+}
+
+figure {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+figcaption {
+  position: absolute;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  right: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  transition: all 300ms ease;
+}
+
+figure:hover figcaption {
+  opacity: 1;
+}
+
+.movie-card-link {
+  max-width: 220px;
+  display: inline-block;
+  border: 5px solid #fff;
+  border-radius: 4px;
+}
+
+.movie-card-link:hover {
+  border-color: green;
+}
+
+.cover-img {
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  padding-left: 45%;
+  padding-top: 30%;
+}
+
+.rating {
+  text-align: center;
+  color: #fff;
+}
+
+.genre {
+  text-align: center;
+  color: #fff;
+}
+
+/* Новые стили для блока с фильтром */
+#genreFilter {
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+label {
+  margin-right: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+select {
+  padding: 5px;
+  font-size: 16px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.trailer-player {
+  width: 100%;
+  height: 300px; /* Выберите желаемую высоту для плеера */
+}
+label {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+
+select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+}
+header {
+  background-color: #333;
+  padding: 10px 0;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul li {
+  margin-right: 20px;
 }
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #00ff00; /* Цвет при наведении, замените на ваш цвет */
+}
+header {
+  background-color: #333;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #fff; /* Добавлен стиль для границы с белым цветом */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #00ff00;
+}
+/* Добавьте следующие стили в ваш файл стилей (например, App.css) */
+
+
