@@ -1,9 +1,28 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": 11,
       "username": "admin",
-      "password": "1111"
+      "password": "1111",
+      "preferences": ["action", "comedy", "drama"]
+    },
+    {
+      "id": 1,
+      "username": "user1",
+      "password": "password1",
+      "preferences": ["action", "drama"]
+    },
+    {
+      "id": 2,
+      "username": "user2",
+      "password": "password2",
+      "preferences": ["comedy", "adventure"]
+    },
+    {
+      "id": 3,
+      "username": "user3",
+      "password": "password3",
+      "preferences": ["sciFi", "thriller"]
     }
   ]
 }

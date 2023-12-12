@@ -9,6 +9,8 @@ const LoginPage = () => {
   const userContext = useContext(UserContext);
   const navigate = useNavigate();
 
+  console.log(userContext);
+
   const handleLogin = () => {
     if(username.trim() === '' || password.trim() === ''){
       setError('Please enter both username and password.');
@@ -23,7 +25,7 @@ const LoginPage = () => {
         const user = response[0]
 
         if(user && user.id){
-          userContext.setUser(user);
+          userContext.onChange(user);
           navigate('/');
         } else{
           setError("Invalid user");

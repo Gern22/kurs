@@ -32,7 +32,7 @@ export default function UserContextProvider({children}){
   }, [user?.id]);
 
   return (
-    <UserContext.Provider value={{user, setUser, loading}}>
+    <UserContext.Provider value={{user, onChange: setUser, loading}}>
       {children}
     </UserContext.Provider>
   )
