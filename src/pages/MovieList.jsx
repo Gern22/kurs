@@ -1,7 +1,5 @@
-// components/MovieList.js
 import React, {useContext, useEffect, useState} from 'react';
-import MovieCard from './MovieCard';
-import {UserContext} from "./UserContextProvider";
+import MovieCard from '../components/MovieCard';
 
 const MovieList = () => {
     const [movies, setMovies] = useState([]);
