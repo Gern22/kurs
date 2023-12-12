@@ -1,16 +1,13 @@
 body {
-  display: flex;
+  width: 100vw;
+  height: 100vh;
   background: #333;
   margin: 0;
   color: #fff;
 }
 
 .main {
-  margin-top: 10%;
-  margin-left: 28px;
-  margin-right: 28px;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin-top: 50px;
 }
 
 .movie-card {
@@ -97,6 +94,7 @@ select {
   width: 100%;
   height: 300px; /* Выберите желаемую высоту для плеера */
 }
+
 label {
   margin-right: 10px;
   font-size: 16px;
@@ -110,13 +108,6 @@ select {
   border-radius: 4px;
   background-color: #fff;
   color: #333;
-}
-header {
-  background-color: #333;
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 nav ul {
@@ -140,14 +131,6 @@ nav ul li a {
 nav ul li a:hover {
   color: #00ff00; /* Цвет при наведении, замените на ваш цвет */
 }
-header {
-  background-color: #333;
-  padding: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #fff; /* Добавлен стиль для границы с белым цветом */
-}
 
 nav ul {
   list-style: none;
@@ -170,6 +153,7 @@ nav ul li a {
 nav ul li a:hover {
   color: #00ff00;
 }
+
 /* Добавьте следующие стили в ваш файл стилей (например, App.css) */
 
 

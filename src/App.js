@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MovieList from './pages/MovieList/MovieList';
 import MovieDetails from './pages/MovieDetails';
@@ -19,12 +19,14 @@ function App(){
       <Header/>
       <div className="main">
         <UserContextProvider>
+          {/*Add here PreferencesProvider*/}
           <Routes>
             <Route path="/" element={<MovieList/>}/>
             <Route path="/movie/:id" element={<MovieDetails/>}/>
             <Route path="/for-you" element={<ForYou/>}/>
             <Route path="/login" element={<LoginPage setCurrentUser={setCurrentUser}/>}/>
           </Routes>
+          {/*Add here PreferencesProvider*/}
         </UserContextProvider>
       </div>
     </div>

@@ -1,5 +1,9 @@
-header {
+div header {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: #333;
+  padding: 10px 0;
+  border-bottom: 2px solid #fff;
 }

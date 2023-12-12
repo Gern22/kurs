@@ -9,6 +9,8 @@ export default function UserContextProvider({children}){
   useEffect(() => {
     setLoading(true)
     const id = localStorage.getItem("userId");
+
+    // TODO need to fetch user by id
     if(id){
       fetch(`http://localhost:5001/users?id=${id}`)
         .then((r) => r.json())

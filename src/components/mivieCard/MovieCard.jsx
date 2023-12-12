@@ -1,10 +1,11 @@
 // components/MovieCard.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './MovieCard.css';
 
-const MovieCard = ({movie}) => (
+const MovieCard = ({movie, isRecommended}) => (
   <Link to={`/movie/${movie.id}`}>
-    <div className={`movie-card ${movie.title === 'Apolonia, Apolonia' ? 'apolonia' : ''}`}>
+    <div className={`movie-card ${isRecommended ? 'recommended' : ''}`}>
       <div className="movie-card-link">
         <figure>
           <img className="cover-img" src={movie.medium_cover_image} alt={movie.title}/>
