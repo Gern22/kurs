@@ -1,8 +1,10 @@
+// Header.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 
-const Header = ({currentUser, onGenreChange, genres}) => (
+const Header = ({ currentUser, onGenreChange, genres, onSearchChange }) => (
   <div>
     <header>
       <nav>
@@ -29,6 +31,8 @@ const Header = ({currentUser, onGenreChange, genres}) => (
         {/* Дополнительные элементы интерфейса для авторизованного пользователя */}
       </div>
     )}
+
+
   </div>
 );
 

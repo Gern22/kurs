@@ -11,6 +11,7 @@ import './App.css';
 function App(){
   const genres = ['Action', 'Drama', 'Comedy', 'Fantasy', 'Thriller', 'Sci-Fi', 'Music', 'Horror', 'Documentary', 'War', 'Crime', 'Mystery', 'History', 'Romance', 'Biography', 'Family', 'Sport'];
 
+
   return (
     <div className="App">
       <Header/>

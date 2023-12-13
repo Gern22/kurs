@@ -1,26 +1,18 @@
-import React, { useContext, useEffect } from 'react';
-import { UserContext } from '../context/UserContextProvider';
+import React, { useContext, useEffect, useState } from 'react';
+import MovieList from './MovieList/MovieList';
+import { UserContext } from '../context/UserContextProvider.jsx';
 
 const ForYou = () => {
-  const {user} = useContext(UserContext);
-
-  // useEffect(() => {
-  //   //TODO sorted movies by userContext.user.preferences
-  //   // and add which movies are recommended to FilteredMovies
-  //   // sorted by rating
-  //   // const somelist = userContext.user ? userContext.user.preferences : []
-  //   setFilteredMovies(movies);
-  //   // movies.map((m) => ({
-  //   //   ...m,
-  //   //   isRecommended: somelist.includes(m.genres[0])
-  //   // }))
-  // }, [movies]);
+  const { user } = useContext(UserContext);
 
   return (
-        <div>
-            <h2>{user ? 'For You Page' : 'Please login to see ad some text'}</h2>
-        </div>
-    );
+    <div>
+      <h2>{user ? 'For You Page' : 'Please login to see ad some text'}</h2>
+
+
+      <MovieList />
+    </div>
+  );
 };
 
 export default ForYou;
