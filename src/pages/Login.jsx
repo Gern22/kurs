@@ -9,8 +9,6 @@ const LoginPage = () => {
   const userContext = useContext(UserContext);
   const navigate = useNavigate();
 
-  console.log(userContext);
-
   const handleLogin = () => {
     if(username.trim() === '' || password.trim() === ''){
       setError('Please enter both username and password.');

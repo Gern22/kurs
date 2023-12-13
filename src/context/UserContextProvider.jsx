@@ -1,15 +1,14 @@
-import {createContext, useEffect, useState} from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const UserContext = createContext(null)
 
-export default function UserContextProvider({children}) {
+export default function UserContextProvider({children}){
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
   const changeUserPreferences = (newPreferences) => {
-    console.log(user);
 
     // Используем оператор распыления для добавления каждого элемента массива в предпочтения
-    const updatedPreferences = [...user.preferences, ...newPreferences];
+    const updatedPreferences = newPreferences.length ? [...user.preferences, ...newPreferences] : user.preferences;
 
     // Используем Set, чтобы удалить возможные дубликаты
     const uniquePreferences = Array.from(new Set(updatedPreferences));
@@ -26,7 +25,7 @@ export default function UserContextProvider({children}) {
     const id = localStorage.getItem("userId");
 
     // TODO need to fetch user by id
-    if (id) {
+    if(id){
       fetch(`http://localhost:5001/users?id=${id}`)
         .then((r) => r.json())
         .then((users) => users[0])
@@ -37,13 +36,13 @@ export default function UserContextProvider({children}) {
         .finally((err) => {
           setLoading(false)
         })
-    } else {
+    } else{
       setLoading(false)
     }
   }, [])
 
   useEffect(() => {
-    if (user?.id) {
+    if(user?.id){
       localStorage.setItem('userID', user.id)
     }
   }, [user?.id]);

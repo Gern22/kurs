@@ -4,7 +4,7 @@
       "id": 11,
       "username": "admin",
       "password": "1111",
-      "preferences": ["action", "comedy", "drama"]
+      "preferences": ["Drama"]
     },
     {
       "id": 1,
